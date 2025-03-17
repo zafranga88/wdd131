@@ -23,6 +23,12 @@ h1 {
     margin: 2rem 0;
 }
 
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
 header {
     background-color: #3498db;
     color: white;
