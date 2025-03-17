@@ -1,0 +1,42 @@
+@media screen and (min-width: 768px) {
+    .hamburger-menu {
+        display: none;
+    }
+    
+    header {
+        padding: 1rem 2rem;
+    }
+    
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-top: 0;
+    }
+    
+    nav li {
+        margin: 0 0 0 1.5rem;
+    }
+    
+    .header-content {
+        align-items: center;
+    }
+
+    .temple-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    main {
+        padding: 2rem;
+    }
+
+    .temple-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
