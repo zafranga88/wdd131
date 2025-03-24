@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italy</title>
+    <meta name="description" content="Discover the beauty and culture of Italy, from ancient ruins to picturesque landscapes.">
+    <meta name="author" content="Franco Zarate">
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Italy</h1>
+        <nav>
+            <ul>
+                <li><a href="#data">Data</a></li>
+                <li><a href="#weather">Weather</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="hero">
+            <picture>
+                <source srcset="images/italy-large.webp" media="(min-width: 1000px)">
+                <source srcset="images/italy-medium.webp" media="(min-width: 500px)">
+                <img src="images/italy-small.webp" alt="Beautiful scenery of Italy" width="1500" height="750">
+            </picture>
+
+            <div class="data-overlay">
+                <h2>Data</h2>
+                <ul class="data-list">
+                    <li><strong>Area:</strong> 301,340 km²</li>
+                    <li><strong>Population:</strong> 60.36 million</li>
+                    <li><strong>Capital:</strong> Rome</li>
+                    <li><strong>Languages:</strong> Italian</li>
+                    <li><strong>Currency:</strong> Euro (€)</li>
+                    <li><strong>Time Zone:</strong> CET (UTC+1)</li>
+                    <li><strong>Calling Code:</strong> +39</li>
+                    <li><strong>Internet TLD:</strong> .it</li>
+                </ul>
+            </div>
+
+            <div class="weather-overlay">
+                <h2>Weather</h2>
+                <div class="weather-card">
+                    <div class="weather-info">
+                        <p>Rome, Italy ⛅</p>
+                        <p class="temp">22°C</p>
+                        <p>Wind: 6 km/h</p>
+                        <p>Feels like: <span id="windchill"></span></p>
+                    </div>
+                    <div class="weather-icon">
+                        <img src="images/partly-cloudy.jpg" alt="Partly cloudy">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="data" class="mobile-only">
+            <h2>Data</h2>
+            <ul class="data-list">
+                <li><strong>Area:</strong> 301,340 km² (116,350 sq mi)</li>
+                <li><strong>Population:</strong> 60.36 million (2020)</li>
+                <li><strong>Capital:</strong> Rome</li>
+                <li><strong>Languages:</strong> Italian (official)</li>
+                <li><strong>Currency:</strong> Euro (€) (EUR)</li>
+                <li><strong>Time Zone:</strong> CET (UTC+1), CEST (UTC+2) in summer</li>
+                <li><strong>Calling Code:</strong> +39</li>
+                <li><strong>Internet TLD:</strong> .it</li>
+            </ul>
+        </section>
+        <section id="weather" class="mobile-only">
+            <h2>Weather</h2>
+            <div class="weather-card">
+                <div class="weather-info">
+                    <p>Rome, Italy</p>
+                    <p class="temp">22°C</p>
+                    <p>Wind: 6 km/h</p>
+                    <p>Feels like: <span id="windchill-mobile"></span></p>
+                </div>
+                <div class="weather-icon">
+                    <img src="images/partly-cloudy.svg" alt="Partly cloudy">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentYear"></span> | Franco Zarate | Last Updated: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>
