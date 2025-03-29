@@ -1,0 +1,44 @@
+@media (min-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        margin-top: 1rem;
+    }
+    
+    nav li {
+        margin: 0 1rem 0 0;
+    }
+    
+    .hamburger-menu {
+        display: none;
+    }
+
+    .temples-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    header {
+        padding: 1rem 2rem;
+    }
+    
+    .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+ 
+    .temples-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .temples-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
