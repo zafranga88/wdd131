@@ -1,119 +1,452 @@
+/* Medium CSS - For tablets and smaller desktops (768px+) */
+@media (min-width: 768px) {
+  /* Global Styles */
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  section {
+    padding: 3rem 2rem;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  
+  /* Header */
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+  }
+  
+  .logo {
+    margin-bottom: 0;
+  }
+  
+  #hamburger-btn {
+    display: none;
+  }
+  
+  #primary-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: auto;
+  }
+  
+  #primary-nav li {
+    margin: 0 0 0 1.5rem;
+  }
+  
+  #primary-nav a {
+    padding: 0.5rem;
+  }
+  
+  #primary-nav .cta-button {
+    margin-top: 0;
+  }
+  
+  /* Hero Section */
+  .hero {
+    height: 70vh;
+    min-height: 400px;
+  }
+  
+  .hero-overlay h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-overlay p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+  }
+  
+  /* Featured Trails */
+  .trail-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .trail-card img {
+    height: 220px;
+  }
+  
+  /* About Patagonia */
+  .content-columns {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  
+  .text-column {
+    flex: 3;
+    text-align: left;
+  }
+  
+  .image-column {
+    flex: 2;
+  }
+  
+  /* Weather Section */
+  .weather-widget {
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 700px;
+  }
+  
+  /* Newsletter Form */
+  #newsletter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  
+  #newsletter-form .form-group {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 0;
+  }
+  
+  #newsletter-form button {
+    margin-top: 0;
+  }
+  
+  /* Page Header */
+  .page-header {
+    padding: 3rem 2rem;
+  }
+  
+  /* Trails Page Styles */
+  .filter-controls {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+  
+  .filter-group {
+    flex: 1;
+    min-width: 150px;
+  }
+  
+  .filter-button,
+  .reset-button {
+    margin-top: 0;
+    white-space: nowrap;
+  }
+  
+  .trails-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  /* Trail Detail Modal */
+  .modal-content {
+    width: 80%;
+    margin: 5% auto;
+    padding: 2.5rem;
+  }
+  
+  /* User Reviews */
+  .review-form-container,
+  .reviews-display {
+    padding: 2rem;
+  }
+  
+  .checkbox-group {
+    gap: 1rem;
+  }
+  
+  /* Tools Section */
+  .tool-container {
+    padding: 2rem;
+  }
+  
+  .calculator-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .calculator-form button {
+    grid-column: span 2;
+  }
+  
+  .calculator-result {
+    padding: 2rem;
+  }
+  
+  .checklist-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 1.5rem;
+  }
+  
+  .checklist-controls .form-group {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  /* Seasonal Tabs */
+  .seasonal-tabs {
+    justify-content: center;
+    padding: 0 2rem;
+    gap: 1rem;
+  }
+  
+  .tab-button {
+    flex-grow: 0;
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .season-panel {
+    padding: 0 2rem 2rem;
+    display: none;
+  }
+  
+  .season-panel.active {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .season-image {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Footer Styles */
+  footer {
+    padding: 3rem 2rem 1.5rem;
+  }
+  
+  .footer-content {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .footer-bottom {
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  /* Site Plan Specific Styles */
+  .section {
+    margin-bottom: 3rem;
+  }
+  
+  .color-sample {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .color-box {
+    width: 100px;
+    height: 100px;
+    border-radius: var(--border-radius);
+    flex-shrink: 0;
+  }
+  
+  .wireframe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Mobile wireframe in medium size */
+  .mobile-wireframe {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+}
+/* Trail Detail View */
+.trail-detail-view {
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.detail-header h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: #2a3d45;
+}
+
+.back-to-trails {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #3c6e71;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.back-to-trails:hover {
+  background-color: #2a4e51;
+}
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.detail-image-container {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1);
+}
+
+.detail-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.detail-info-container {
+  flex: 1;
+}
+
+.detail-meta {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+.detail-meta p {
+  margin: 0.5rem 0;
+}
+
+.detail-description, .detail-map {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+.map-placeholder {
+  background-color: #e9ecef;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.detail-additional {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.equipment-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+.error-message {
+  text-align: center;
+  padding: 3rem;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .detail-content {
+      flex-direction: row;
+  }
+  
+  .detail-image-container {
+      width: 50%;
+  }
+}
+
+/*................*/
+
+
+/* Seasonal Guide Images */
+.season-panel {
+  display: none;
+}
+
+.season-panel.active {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.season-image {
+  position: relative;
+  min-height: 250px;
+  background-color: var(--light-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.season-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.season-image img:not(.loaded) {
+  opacity: 0;
+}
+
+.season-image img.loaded {
+  opacity: 1;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
 @media (min-width: 768px) {
-    .container {
-        width: 85%;
-        max-width: 900px;
-        padding: 15px;
-    }
-    
-    .section {
-        padding: 20px;
-    }
-
-    .color-sample {
-        flex-direction: row;
-    }
-    
-    .color-box {
-        width: 80px;
-        height: 80px;
-        margin-right: 15px;
-        margin-bottom: 0;
-    }
-
-    .logo-text {
-        font-size: 22px;
-    }
-    
-    .logo-icon {
-        width: 45px;
-        height: 45px;
-        font-size: 22px;
-    }
-
-    .desktop-wireframe {
-        height: 450px;
-    }
-    
-    .desktop-nav {
-        display: flex;
-        width: 350px;
-        justify-content: space-between;
-    }
-    
-    .desktop-nav-item {
-        width: 60px;
-        height: 20px;
-        background-color: #fff;
-    }
-    
-    .desktop-cta-button {
-        width: 100px;
-        height: 30px;
-        background-color: var(--highlight-color);
-    }
-
-    .desktop-main {
-        flex-direction: row;
-    }
-    
-    .desktop-main-left {
-        width: 60%;
-        padding: 20px;
-    }
-    
-    .desktop-main-right {
-        width: 40%;
-        padding: 20px;
-        background-color: #f9f9f9;
-    }
-    
-    .desktop-hero {
-        height: 180px;
-        background-color: #ddd;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #999;
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
-    
-    .desktop-section-title {
-        height: 20px;
-        background-color: var(--secondary-color);
-        width: 50%;
-        margin-bottom: 10px;
-    }
-    
-    .desktop-trail-cards {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    
-    .desktop-trail-card {
-        height: 120px;
-        width: 48%;
-        background-color: #eee;
-        margin-bottom: 10px;
-    }
-    
-    .desktop-search-bar {
-        height: 40px;
-        background-color: #eee;
-        border-radius: 20px;
-        margin-bottom: 20px;
-    }
-    
-    .desktop-tool-card {
-        height: 100px;
-        background-color: #eee;
-        margin-bottom: 10px;
-    }
-    
-    .desktop-weather-widget {
-        height: 80px;
-        background-color: #eee;
-    }
+  .season-panel.active {
+      flex-direction: row;
+  }
+  
+  .season-image {
+      min-height: 400px;
+  }
 }

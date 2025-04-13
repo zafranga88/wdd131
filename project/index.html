@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the best hiking trails in Patagonia with Patagonia Trail Explorers - Your comprehensive resource for planning adventures in Argentina's breathtaking region">
+    <meta name="author" content="Franco Zarate">
+    <title>Patagonia Trail Explorers - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/medium.css" media="(min-width: 768px)">
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 1024px)">
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/trails.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon">&#9968;</div>
+            <div class="logo-text">Patagonia Trail Explorers</div>
+        </div>
+        <nav>
+            <button id="hamburger-btn" aria-label="Toggle Menu">☰</button>
+            <ul id="primary-nav">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="trails.html">Trails</a></li>
+                <li><a href="tools.html">Planning Tools</a></li>
+                <li><a href="contact.html">Join us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <picture>
+                <source srcset="images/patagonia-hero-small.jpg" media="(max-width: 500px)">
+                <source srcset="images/patagonia-hero-medium.jpg" media="(max-width: 800px)">
+                <img src="images/patagonia-hero-large.jpg" alt="Breathtaking mountain view in Patagonia" class="lazy-load" loading="lazy">
+            </picture>
+            <div class="hero-overlay">
+                <h1>Discover Patagonia's Hidden Trails</h1>
+                <p>Your comprehensive guide to Argentina's most beautiful hiking destinations</p>
+                <a href="trails.html" class="cta-button">Explore Trails</a>
+            </div>
+        </section>
+        
+        <section class="featured-trails">
+            <h2>Featured Trails</h2>
+            <div class="trail-cards" id="featured-trails-container">
+                <div class="trail-card">
+                    <div class="trail-image">
+                        <img src="images/laguna-de-los-tres.jpg" alt="Laguna de los Tres" class="lazy-load" loading="lazy">
+                    </div>
+                    <div class="trail-info">
+                        <h3>Laguna de los Tres</h3>
+                        <p class="trail-location">El Chaltén</p>
+                        <div class="trail-meta">
+                            <span class="difficulty moderate">Moderate</span>
+                            <span class="duration">8 hours</span>
+                            <span class="distance">21 km</span>
+                        </div>
+                        <p class="trail-description">One of the most iconic hikes in Patagonia with breathtaking views of Mount Fitz Roy.</p>
+                        <a href="trails.html?trail=1" class="trail-link">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="trail-card">
+                    <div class="trail-image">
+                        <img src="images/laguna-torre.jpg" alt="Laguna Torre" class="lazy-load" loading="lazy">
+                    </div>
+                    <div class="trail-info">
+                        <h3>Laguna Torre</h3>
+                        <p class="trail-location">El Chaltén</p>
+                        <div class="trail-meta">
+                            <span class="difficulty moderate">Moderate</span>
+                            <span class="duration">6 hours</span>
+                            <span class="distance">18 km</span>
+                        </div>
+                        <p class="trail-description">A beautiful trek leading to a glacial lake with views of Cerro Torre.</p>
+                        <a href="trails.html?trail=2" class="trail-link">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="trail-card">
+                    <div class="trail-image">
+                        <img src="images/perito-moreno.jpg" alt="Perito Moreno Glacier Walk" class="lazy-load" loading="lazy">
+                    </div>
+                    <div class="trail-info">
+                        <h3>Perito Moreno Glacier Walk</h3>
+                        <p class="trail-location">El Calafate</p>
+                        <div class="trail-meta">
+                            <span class="difficulty easy">Easy</span>
+                            <span class="duration">3 hours</span>
+                            <span class="distance">5 km</span>
+                        </div>
+                        <p class="trail-description">Experience walking on one of the world's most famous advancing glaciers.</p>
+                        <a href="trails.html?trail=3" class="trail-link">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <a href="trails.html" class="view-more">View All Trails →</a>
+        </section>
+        
+        <section class="about-patagonia">
+            <h2>About Patagonia</h2>
+            <div class="content-columns">
+                <div class="text-column">
+                    <p>Patagonia, spanning the southern regions of Argentina and Chile, is a vast and diverse landscape known for its breathtaking natural beauty. The region offers some of the world's most spectacular hiking experiences, from gentle walks through ancient forests to challenging multi-day treks across glacial terrains.</p>
+                    <p>The Argentine side of Patagonia features iconic locations such as Los Glaciares National Park, home to the famous Perito Moreno Glacier and the stunning Mount Fitz Roy. Further south, Tierra del Fuego presents unique hiking opportunities with its distinctive subpolar forests and coastal trails.</p>
+                    <p>What makes Patagonia special is not just its dramatic landscapes but also its unique ecosystem, vibrant wildlife, and the sense of remoteness that hikers experience while traversing its trails.</p>
+                </div>
+                <div class="image-column">
+                    <img src="images/patagonia-landscape.jpg" alt="Dramatic Patagonian landscape with mountains" class="lazy-load" loading="lazy">
+                </div>
+            </div>
+        </section>
+        
+        <section class="weather-section">
+            <h2>Current Weather in Patagonia</h2>
+            <div class="weather-widget" id="weather-widget">
+                <div class="weather-loading">Loading weather data...</div>
+            </div>
+            <p class="weather-disclaimer">Weather conditions in Patagonia can change rapidly. Always check local forecasts before heading out.</p>
+        </section>
+        
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Patagonia Trail Explorers</h3>
+                <p>Your comprehensive resource for hiking adventures in Argentina's Patagonia region.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="trails.html">Trails</a></li>
+                    <li><a href="tools.html">Planning Tools</a></li>
+                    <li><a href="contact.html">Join Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <nav class="social-icons">
+                    <a href="https://facebook.com">
+                        <img src="images/facebook.webp" alt="facebook">
+                    </a>
+                    <a href="https://twitter.com">
+                        <img src="images/twitter.webp" alt="twitter">
+                    </a>
+                    <a href="https://instagram.com">
+                        <img src="images/instagram.webp" alt="instagram">
+                    </a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><span id="currentyear"></span> ♠ Franco Zarate ♠ Argentina</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Patagonia's hiking trails - Find detailed information about difficulty levels, duration, and scenic highlights for trails across Argentina's Patagonia region">
+    <meta name="author" content="Franco Zarate">
+    <title>Patagonia Trail Explorers - Trails</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/medium.css" media="(min-width: 768px)">
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 1024px)">
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/trails.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon">&#9968;</div>
+            <div class="logo-text">Patagonia Trail Explorers</div>
+        </div>
+        <nav>
+            <button id="hamburger-btn" aria-label="Toggle Menu">☰</button>
+            <ul id="primary-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="trails.html" class="active">Trails</a></li>
+                <li><a href="tools.html">Planning Tools</a></li>
+                <li><a href="contact.html">Join us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="page-header">
+            <h1>Patagonia Hiking Trails</h1>
+            <p>Discover the most spectacular trails across Argentina's Patagonia region, from beginner-friendly hikes to challenging multi-day treks.</p>
+        </section>
+        <section id="trail-detail-view" class="trail-detail-view" style="display: none;">
+            <div class="detail-header">
+                <h2 id="detail-trail-name"></h2>
+                <a href="trails.html" class="back-to-trails">Back to All Trails</a>
+            </div>
+            
+            <div class="detail-content">
+                <div class="detail-image-container">
+                    <img id="detail-trail-image" src="" alt="" class="detail-image">
+                </div>
+                
+                <div class="detail-info-container">
+                    <div class="detail-meta">
+                        <p><strong>Location:</strong> <span id="detail-trail-location"></span></p>
+                        <p><strong>Difficulty:</strong> <span id="detail-trail-difficulty"></span></p>
+                        <p><strong>Duration:</strong> <span id="detail-trail-duration"></span></p>
+                        <p><strong>Distance:</strong> <span id="detail-trail-distance"></span></p>
+                    </div>
+                    
+                    <div class="detail-description">
+                        <h3>Trail Description</h3>
+                        <p id="detail-trail-description"></p>
+                    </div>
+                    
+                    <div class="detail-map">
+                        <h3>Trail Map</h3>
+                        <div class="map-placeholder">
+                            <p>Interactive map loading...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="detail-additional">
+                <h3>What to Bring</h3>
+                <ul class="equipment-list">
+                    <li>Hiking boots with ankle support</li>
+                    <li>Weather-appropriate clothing (layers recommended)</li>
+                    <li>Backpack with rain cover</li>
+                    <li>Water (at least 2 liters per person)</li>
+                    <li>Trail snacks and lunch</li>
+                    <li>Sun protection (hat, sunglasses, sunscreen)</li>
+                    <li>First aid kit</li>
+                    <li>Trail map and compass/GPS</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="trail-filters">
+            <h2>Find Your Trail</h2>
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label for="difficulty-filter">Difficulty</label>
+                    <select id="difficulty-filter">
+                        <option value="all">All Difficulties</option>
+                        <option value="easy">Easy</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="difficult">Difficult</option>
+                        <option value="challenging">Challenging</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="duration-filter">Duration</label>
+                    <select id="duration-filter">
+                        <option value="all">All Durations</option>
+                        <option value="half-day">Half Day (< 4 hours)</option>
+                        <option value="full-day">Full Day (4-8 hours)</option>
+                        <option value="multi-day">Multi-Day (> 8 hours)</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="feature-filter">Features</label>
+                    <select id="feature-filter">
+                        <option value="all">All Features</option>
+                        <option value="glacier">Glaciers</option>
+                        <option value="lake">Lakes</option>
+                        <option value="mountain">Mountains</option>
+                        <option value="forest">Forests</option>
+                        <option value="wildlife">Wildlife</option>
+                    </select>
+                </div>
+                
+                <button id="filter-button" class="filter-button">Apply Filters</button>
+                <button id="reset-filters" class="reset-button">Reset</button>
+            </div>
+        </section>
+        
+        <section class="trails-gallery">
+            <div id="trails-count" class="trails-count">Showing 8 trails</div>
+            <div id="trails-container" class="trail-cards">
+                <div class="trail-card" data-difficulty="moderate" data-duration="full-day" data-features="glacier,mountain,lake">
+                    <div class="trail-image">
+                        <img src="images/laguna-de-los-tres.jpg" alt="Laguna de los Tres" class="lazy-load" loading="lazy">
+                    </div>
+                    <div class="trail-info">
+                        <h3>Laguna de los Tres</h3>
+                        <p class="trail-location">El Chaltén</p>
+                        <div class="trail-meta">
+                            <span class="difficulty moderate">Moderate</span>
+                            <span class="duration">8 hours</span>
+                            <span class="distance">21 km</span>
+                        </div>
+                        <p class="trail-description">One of the most iconic hikes in Patagonia with breathtaking views of Mount Fitz Roy.</p>
+                        <a href="trails.html?trail=1" class="trail-link">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="trail-card" data-difficulty="moderate" data-duration="full-day" data-features="glacier,mountain,lake">
+                    <div class="trail-image">
+                        <img src="images/laguna-torre.jpg" alt="Laguna Torre" class="lazy-load" loading="lazy">
+                    </div>
+                    <div class="trail-info">
+                        <h3>Laguna Torre</h3>
+                        <p class="trail-location">El Chaltén</p>
+                        <div class="trail-meta">
+                            <span class="difficulty moderate">Moderate</span>
+                            <span class="duration">6 hours</span>
+                            <span class="distance">18 km</span>
+                        </div>
+                        <p class="trail-description">A beautiful trek leading to a glacial lake with views of Cerro Torre.</p>
+                        <a href="trails.html?trail=2" class="trail-link">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="trail-card" data-difficulty="easy" data-duration="half-day" data-features="glacier,wildlife">
+                    <div class="trail-image">
+                        <img src="images/perito-moreno.jpg" alt="Perito Moreno Glacier Walk" class="lazy-load" loading="lazy">
+                    </div>
+                    <div class="trail-info">
+                        <h3>Perito Moreno Glacier Walk</h3>
+                        <p class="trail-location">El Calafate</p>
+                        <div class="trail-meta">
+                            <span class="difficulty easy">Easy</span>
+                            <span class="duration">3 hours</span>
+                            <span class="distance">5 km</span>
+                        </div>
+                        <p class="trail-description">Experience walking on one of the world's most famous advancing glaciers.</p>
+                        <a href="trails.html?trail=3" class="trail-link">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="trail-card" data-difficulty="challenging" data-duration="multi-day" data-features="glacier,mountain,lake,forest,wildlife">
+                    <div class="trail-image">
+                        <img src="images/huemul-circuit.jpg" alt="Huemul Circuit" class="lazy-load" loading="lazy">
+                    </div>
+                    <div class="trail-info">
+                        <h3>Huemul Circuit</h3>
+                        <p class="trail-location">El Chaltén</p>
+                        <div class="trail-meta">
+                            <span class="difficulty challenging">Challenging</span>
+                            <span class="duration">4 days</span>
+                            <span class="distance">64 km</span>
+                        </div>
+                        <p class="trail-description">A challenging 4-day circuit with views of the Southern Patagonian Ice Field.</p>
+                        <a href="trails.html?trail=4" class="trail-link">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="trail-card" data-difficulty="easy" data-duration="half-day" data-features="glacier,lake,wildlife">
+                    <div class="trail-image">
+                        <img src="images/glaciares-lookout.jpg" alt="Los Glaciares Lookout" class="lazy-load" loading="lazy">
+                    </div>
+                    <div class="trail-info">
+                        <h3>Los Glaciares Lookout</h3>
+                        <p class="trail-location">El Calafate</p>
+                        <div class="trail-meta">
+                            <span class="difficulty easy">Easy</span>
+                            <span class="duration">3 hours</span>
+                            <span class="distance">4 km</span>
+                        </div>
+                        <p class="trail-description">Boardwalks and easy trails with views of the Perito Moreno Glacier.</p>
+                        <a href="trails.html?trail=5" class="trail-link">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="trail-card" data-difficulty="difficult" data-duration="multi-day" data-features="glacier,mountain,forest,lake">
+                    <div class="trail-image">
+                        <img src="images/cerro-tronador.jpg" alt="Cerro Tronador" class="lazy-load" loading="lazy">
+                    </div>
+                    <div class="trail-info">
+                        <h3>Cerro Tronador</h3>
+                        <p class="trail-location">Bariloche</p>
+                        <div class="trail-meta">
+                            <span class="difficulty difficult">Difficult</span>
+                            <span class="duration">2 days</span>
+                            <span class="distance">36 km</span>
+                        </div>
+                        <p class="trail-description">A challenging ascent of the "Thundering Mountain" with amazing Andes views.</p>
+                        <a href="trails.html?trail=6" class="trail-link">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="trail-card" data-difficulty="moderate" data-duration="full-day" data-features="forest,wildlife">
+                    <div class="trail-image">
+                        <img src="images/tierra-del-fuego.jpg" alt="Tierra del Fuego Coastal Path" class="lazy-load" loading="lazy">
+                    </div>
+                    <div class="trail-info">
+                        <h3>Tierra del Fuego Coastal Path</h3>
+                        <p class="trail-location">Ushuaia</p>
+                        <div class="trail-meta">
+                            <span class="difficulty moderate">Moderate</span>
+                            <span class="duration">6 hours</span>
+                            <span class="distance">15 km</span>
+                        </div>
+                        <p class="trail-description">Explore the southernmost forests with views of the Beagle Channel.</p>
+                        <a href="trails.html?trail=7" class="trail-link">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="trail-card" data-difficulty="difficult" data-duration="multi-day" data-features="mountain,forest,lake,wildlife">
+                    <div class="trail-image">
+                        <img src="images/nahuel-huapi.jpg" alt="Nahuel Huapi Traverse" class="lazy-load" loading="lazy">
+                    </div>
+                    <div class="trail-info">
+                        <h3>Nahuel Huapi Traverse</h3>
+                        <p class="trail-location">Bariloche</p>
+                        <div class="trail-meta">
+                            <span class="difficulty difficult">Difficult</span>
+                            <span class="duration">3 days</span>
+                            <span class="distance">42 km</span>
+                        </div>
+                        <p class="trail-description">Multi-day trek through diverse ecosystems in Argentina's oldest national park.</p>
+                        <a href="trails.html?trail=8" class="trail-link">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="user-reviews">
+            <h2>Trail Reviews</h2>
+            <div class="review-form-container">
+                <h3>Share Your Experience</h3>
+                <form id="review-form" class="review-form">
+                    <div class="form-group">
+                        <label for="trail-select">Select Trail</label>
+                        <select id="trail-select" name="trail" required>
+                            <option value="" disabled selected>Choose a trail...</option>
+                            <option value="1">Laguna de los Tres</option>
+                            <option value="2">Laguna Torre</option>
+                            <option value="3">Perito Moreno Glacier Walk</option>
+                            <option value="4">Huemul Circuit</option>
+                            <option value="5">Los Glaciares Lookout</option>
+                            <option value="6">Cerro Tronador</option>
+                            <option value="7">Tierra del Fuego Coastal Path</option>
+                            <option value="8">Nahuel Huapi Traverse</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Rating</label>
+                        <div class="rating-stars">
+                            <input type="radio" id="star5" name="rating" value="5" required>
+                            <label for="star5" title="5 stars">★</label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4" title="4 stars">★</label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3" title="3 stars">★</label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2" title="2 stars">★</label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1" title="1 star">★</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="hiking-date">Date Hiked</label>
+                        <input type="date" id="hiking-date" name="hiking-date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Trail Conditions</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="condition-dry" name="conditions" value="dry">
+                                <label for="condition-dry">Dry</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="condition-muddy" name="conditions" value="muddy">
+                                <label for="condition-muddy">Muddy</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="condition-snowy" name="conditions" value="snowy">
+                                <label for="condition-snowy">Snowy</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="condition-icy" name="conditions" value="icy">
+                                <label for="condition-icy">Icy</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="condition-windy" name="conditions" value="windy">
+                                <label for="condition-windy">Windy</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="review-text">Your Review</label>
+                        <textarea id="review-text" name="review" rows="4" placeholder="Share your experience on this trail..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reviewer-name">Your Name</label>
+                        <input type="text" id="reviewer-name" name="reviewer-name" placeholder="Your name (optional)">
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Submit Review</button>
+                </form>
+            </div>
+            
+ 
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Patagonia Trail Explorers</h3>
+                <p>Your comprehensive resource for hiking adventures in Argentina's Patagonia region.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="trails.html">Trails</a></li>
+                    <li><a href="tools.html">Planning Tools</a></li>
+                    <li><a href="contact.html">Join us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <nav class="social-icons">
+                    <a href="https://facebook.com">
+                        <img src="images/facebook.webp" alt="facebook">
+                    </a>
+                    <a href="https://twitter.com">
+                        <img src="images/twitter.webp" alt="twitter">
+                    </a>
+                    <a href="https://instagram.com">
+                        <img src="images/instagram.webp" alt="instagram">
+                    </a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><span id="currentyear"></span> ♠ Franco Zarate ♠ Argentina</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>

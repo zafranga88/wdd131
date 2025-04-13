@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Patagonia hiking planning tools - Duration calculators, packing checklists, and weather forecasts to help prepare for your Patagonia hiking adventure">
+    <meta name="author" content="Franco Zarate">
+    <title>Patagonia Trail Explorers - Planning Tools</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/medium.css" media="(min-width: 768px)">
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 1024px)">
+    <script src="scripts/tools.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon">&#9968;</div>
+            <div class="logo-text">Patagonia Trail Explorers</div>
+        </div>
+        <nav>
+            <button id="hamburger-btn" aria-label="Toggle Menu">☰</button>
+            <ul id="primary-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="trails.html">Trails</a></li>
+                <li><a href="tools.html" class="active">Planning Tools</a></li>
+                <li><a href="contact.html">Join us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="page-header">
+            <h1>Hiking Planning Tools</h1>
+            <p>Prepare for your Patagonia adventure with our collection of practical planning tools designed to help you make the most of your hiking experience.</p>
+        </section>
+        
+        <section class="tool-section duration-calculator">
+            <h2>Trail Duration Calculator</h2>
+            <div class="tool-container">
+                <div class="tool-description">
+                    <p>Our trail duration calculator helps you estimate how long a hike will take based on distance, elevation gain, and your personal hiking pace. This can help you plan your day and ensure you complete your hike safely before dark.</p>
+                </div>
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="trail-distance">Trail Distance (km)</label>
+                        <input type="number" id="trail-distance" min="0" step="0.1" placeholder="Enter distance">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="elevation-gain">Elevation Gain (m)</label>
+                        <input type="number" id="elevation-gain" min="0" step="10" placeholder="Enter elevation gain">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="hiking-pace">Your Hiking Pace</label>
+                        <select id="hiking-pace">
+                            <option value="slow">Slow (2 km/h)</option>
+                            <option value="moderate" selected>Moderate (3 km/h)</option>
+                            <option value="fast">Fast (4 km/h)</option>
+                            <option value="very-fast">Very Fast (5 km/h)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="breaks-time">Expected Breaks Time (minutes)</label>
+                        <input type="number" id="breaks-time" min="0" step="5" value="30" placeholder="Time for breaks">
+                    </div>
+                    
+                    <button id="calculate-duration" class="calculate-button">Calculate Duration</button>
+                </div>
+                
+                <div id="duration-result" class="calculator-result">
+                    <div class="result-placeholder">Fill in the form to calculate estimated hiking duration</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="tool-section packing-checklist">
+            <h2>Packing Checklist</h2>
+            <div class="tool-container">
+                <div class="tool-description">
+                    <p>Use our interactive packing checklist to ensure you have all the essential gear for your Patagonia hiking trip. Customize the list based on your hike duration, season, and personal preferences.</p>
+                </div>
+                
+                <div class="checklist-controls">
+                    <div class="form-group">
+                        <label for="hike-type">Hike Type</label>
+                        <select id="hike-type">
+                            <option value="day-hike">Day Hike</option>
+                            <option value="overnight">Overnight</option>
+                            <option value="multi-day">Multi-day Trek</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="hike-season">Season</label>
+                        <select id="hike-season">
+                            <option value="summer">Summer (Dec-Feb)</option>
+                            <option value="fall">Fall (Mar-May)</option>
+                            <option value="winter">Winter (Jun-Aug)</option>
+                            <option value="spring">Spring (Sep-Nov)</option>
+                        </select>
+                    </div>
+                    
+                    <button id="generate-checklist" class="generate-button">Generate Checklist</button>
+                    <button id="save-checklist" class="save-button" disabled>Save My Checklist</button>
+                </div>
+                
+                <div id="checklist-container" class="checklist-container">
+                    <div class="checklist-placeholder">Select options and click Generate Checklist to start</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="tool-section seasonal-guide">
+            <h2>Seasonal Hiking Guide</h2>
+            <div class="seasonal-tabs">
+                <button class="tab-button active" data-season="summer">Summer</button>
+                <button class="tab-button" data-season="fall">Fall</button>
+                <button class="tab-button" data-season="winter">Winter</button>
+                <button class="tab-button" data-season="spring">Spring</button>
+            </div>
+            
+            <div class="seasonal-content">
+                <div id="summer-content" class="season-panel active">
+                    <div class="season-image">
+                        <img data-src="images/patagonia-summer.jpg" alt="Patagonia in summer" class="lazy-load" loading="lazy">
+                    </div>
+                    <div class="season-info">
+                        <h3>Summer (December - February)</h3>
+                        <p>Summer is the peak hiking season in Patagonia, offering relatively stable weather and longer daylight hours. Temperatures typically range from 10°C to 20°C (50°F to 68°F), making it comfortable for hiking.</p>
+                        <h4>What to Expect:</h4>
+                        <ul>
+                            <li>Crowded popular trails and fuller accommodation</li>
+                            <li>Strong winds, particularly in the afternoons</li>
+                            <li>Beautiful wildflowers in bloom</li>
+                            <li>Greater wildlife activity</li>
+                        </ul>
+                        <h4>Recommended Gear:</h4>
+                        <ul>
+                            <li>Sun protection (hat, sunscreen, sunglasses)</li>
+                            <li>Lightweight, moisture-wicking clothing</li>
+                            <li>Windproof and waterproof outer layers</li>
+                            <li>Insect repellent</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="fall-content" class="season-panel">
+                    <div class="season-image">
+                        <img data-src="images/patagonia-fall.jpg" alt="Patagonia in fall" class="lazy-load" loading="lazy">
+                    </div>
+                    <div class="season-info">
+                        <h3>Fall (March - May)</h3>
+                        <p>Fall brings spectacular autumn colors to Patagonia's forests, with the famous lenga trees turning brilliant shades of red and gold. Temperatures begin to drop, ranging from 5°C to 15°C (41°F to 59°F).</p>
+                        <h4>What to Expect:</h4>
+                        <ul>
+                            <li>Fewer crowds on trails</li>
+                            <li>Stunning fall foliage, especially in April</li>
+                            <li>Increasing precipitation</li>
+                            <li>Shorter daylight hours</li>
+                        </ul>
+                        <h4>Recommended Gear:</h4>
+                        <ul>
+                            <li>Warmer layers (medium-weight base layers, fleece)</li>
+                            <li>Waterproof hiking boots</li>
+                            <li>Rain gear</li>
+                            <li>Gloves and warm hat</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="winter-content" class="season-panel">
+                    <div class="season-image">
+                        <img data-src="images/patagonia-winter.jpg" alt="Patagonia in winter" class="lazy-load" loading="lazy">
+                    </div>
+                    <div class="season-info">
+                        <h3>Winter (June - August)</h3>
+                        <p>Winter in Patagonia brings snow to many trails, with temperatures often dropping below freezing. Temperatures typically range from -5°C to 5°C (23°F to 41°F), though they can be much colder with wind chill.</p>
+                        <h4>What to Expect:</h4>
+                        <ul>
+                            <li>Many trails and facilities closed due to snow</li>
+                            <li>Very few visitors</li>
+                            <li>Short daylight hours (around 8 hours)</li>
+                            <li>Potential for severe weather</li>
+                        </ul>
+                        <h4>Recommended Gear:</h4>
+                        <ul>
+                            <li>Winter hiking boots and gaiters</li>
+                            <li>Thermal base layers</li>
+                            <li>Heavy insulation (down jacket)</li>
+                            <li>Winter hiking equipment (crampons, ice axe) for some trails</li>
+                            <li>Emergency shelter and communication device</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="spring-content" class="season-panel">
+                    <div class="season-image">
+                        <img data-src="images/patagonia-spring.jpg" alt="Patagonia in spring" class="lazy-load" loading="lazy">
+                    </div>
+                    <div class="season-info">
+                        <h3>Spring (September - November)</h3>
+                        <p>Spring brings a reawakening to Patagonia, with melting snow feeding waterfalls and rivers. Temperatures begin to warm, ranging from 5°C to 15°C (41°F to 59°F), though early spring can still see winterlike conditions.</p>
+                        <h4>What to Expect:</h4>
+                        <ul>
+                            <li>Variable conditions, from snow to rain to sun</li>
+                            <li>Muddy trails in some areas</li>
+                            <li>Fewer crowds than summer</li>
+                            <li>Beautiful spring flowers beginning to bloom</li>
+                        </ul>
+                        <h4>Recommended Gear:</h4>
+                        <ul>
+                            <li>Layering system for variable temperatures</li>
+                            <li>Waterproof hiking boots</li>
+                            <li>Gaiters for muddy or snowy conditions</li>
+                            <li>Rain gear</li>
+                            <li>Trekking poles for stream crossings</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="contact-section">
+            <h2>Need More Information?</h2>
+            <p>Our team of Patagonia hiking experts is ready to help you plan your perfect adventure. Send us your questions, and we'll get back to you with personalized recommendations.</p>
+            <a href="contact.html" class="cta-button">Contact Us</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Patagonia Trail Explorers</h3>
+                <p>Your comprehensive resource for hiking adventures in Argentina's Patagonia region.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="trails.html">Trails</a></li>
+                    <li><a href="tools.html">Planning Tools</a></li>
+                    <li><a href="contact.html">Join Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <nav class="social-icons">
+                    <a href="https://facebook.com">
+                        <img src="images/facebook.webp" alt="facebook">
+                    </a>
+                    <a href="https://twitter.com">
+                        <img src="images/twitter.webp" alt="twitter">
+                    </a>
+                    <a href="https://instagram.com">
+                        <img src="images/instagram.webp" alt="instagram">
+                    </a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><span id="currentyear"></span> ♠ Franco Zarate ♠ Argentina</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>

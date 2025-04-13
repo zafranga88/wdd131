@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Patagonia Trail Explorers or join our community of hikers to get the most out of your Patagonian adventures">
+    <meta name="author" content="Franco Zarate">
+    <title>Patagonia Trail Explorers - Contact & Join</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/medium.css" media="(min-width: 768px)">
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 1024px)">
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon">&#9968;</div>
+            <div class="logo-text">Patagonia Trail Explorers</div>
+        </div>
+        <nav>
+            <button id="hamburger-btn" aria-label="Toggle Menu">☰</button>
+            <ul id="primary-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="trails.html">Trails</a></li>
+                <li><a href="tools.html">Planning Tools</a></li>
+                <li><a href="contact.html" class="active">Join Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="page-banner">
+            <picture>
+                <source srcset="images/contact-banner-small.jpg" media="(max-width: 500px)">
+                <source srcset="images/contact-banner-medium.jpg" media="(max-width: 800px)">
+                <img src="images/contact-banner-large.jpg" alt="Hikers enjoying Patagonia mountains" class="lazy-load" loading="lazy">
+            </picture>
+            <div class="banner-overlay">
+                <h1>Join Our Hiking Community!</h1>
+                <p>Connect with fellow explorers and get exclusive access to trail information</p>
+            </div>
+        </section>
+        
+        <section class="join-options">
+            <h2>Membership Options</h2>
+            <div class="membership-cards">
+                <div class="membership-card">
+                    <div class="card-header">
+                        <h3>Trail Explorer</h3>
+                        <p class="price">Free</p>
+                    </div>
+                    <ul class="benefits">
+                        <li>Access to basic trail information</li>
+                        <li>Monthly newsletter</li>
+                        <li>Community forum access</li>
+                        <li>Basic trip planning tools</li>
+                    </ul>
+                    <a href="#join-form" class="cta-button">Join Now</a>
+                </div>
+                
+                <div class="membership-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="card-header">
+                        <h3>Mountain Guide</h3>
+                        <p class="price">$5/month</p>
+                    </div>
+                    <ul class="benefits">
+                        <li>All Explorer benefits</li>
+                        <li>Detailed trail maps and GPS coordinates</li>
+                        <li>Exclusive hiking guides</li>
+                        <li>Seasonal trail condition updates</li>
+                        <li>Discounts with local partners</li>
+                    </ul>
+                    <a href="#join-form" class="cta-button">Join Now</a>
+                </div>
+                
+                <div class="membership-card">
+                    <div class="card-header">
+                        <h3>Mountain Master</h3>
+                        <p class="price">$10/month</p>
+                    </div>
+                    <ul class="benefits">
+                        <li>All Guide benefits</li>
+                        <li>Priority support from local experts</li>
+                        <li>Custom itinerary planning</li>
+                        <li>Virtual trail consultations</li>
+                        <li>Early access to new content and features</li>
+                        <li>Quarterly digital magazine</li>
+                    </ul>
+                    <a href="#join-form" class="cta-button">Join Now</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="join-form-section" id="join-form">
+            <h2>Join Patagonia Trail Explorers</h2>
+            <p class="form-intro">Create your account to start your Patagonian adventure. Fields marked with an asterisk (*) are required.</p>
+            
+            <form id="join-form" class="contact-form" action="#" method="post">
+                <div class="form-columns">
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="full-name">Full Name *</label>
+                            <input type="text" id="full-name" name="full-name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Optional">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="country">Country *</label>
+                            <select id="country" name="country" required>
+                                <option value="" disabled selected>Select your country</option>
+                                <option value="argentina">Argentina</option>
+                                <option value="chile">Chile</option>
+                                <option value="usa">United States</option>
+                                <option value="canada">Canada</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="membership">Membership Type *</label>
+                            <select id="membership" name="membership" required>
+                                <option value="" disabled selected>Select membership type</option>
+                                <option value="explorer">Trail Explorer (Free)</option>
+                                <option value="guide">Mountain Guide ($5/month)</option>
+                                <option value="master">Mountain Master ($10/month)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="experience">Hiking Experience *</label>
+                            <select id="experience" name="experience" required>
+                                <option value="" disabled selected>Select your level</option>
+                                <option value="beginner">Beginner (0-2 years)</option>
+                                <option value="intermediate">Intermediate (2-5 years)</option>
+                                <option value="advanced">Advanced (5+ years)</option>
+                                <option value="expert">Expert/Professional</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Interests (select all that apply)</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="day-hikes"> Day Hikes
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="backpacking"> Multi-day Backpacking
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="camping"> Camping
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="photography"> Trail Photography
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="wildlife"> Wildlife Observation
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="climbing"> Mountain Climbing
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="message">Tell us about your hiking experiences or what you hope to discover in Patagonia</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                
+                <div class="form-group checkbox-single full-width">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="terms" required>
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a> *
+                    </label>
+                </div>
+                
+                <div class="form-group checkbox-single full-width">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="newsletter" checked>
+                        Subscribe to our newsletter for trail updates and hiking tips
+                    </label>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="cta-button">Join Now</button>
+                    <button type="reset" class="secondary-button">Reset Form</button>
+                </div>
+            </form>
+        </section>
+        
+        <section class="direct-contact">
+            <h2>Contact Us Directly</h2>
+            <div class="contact-options">
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>Email Us</h3>
+                    <p>Have questions? Send us an email at:</p>
+                    <a href="mailto:info@patagoniatrailexplorers.com">info@patagoniatrailexplorers.com</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>Call Us</h3>
+                    <p>For urgent inquiries or trail emergencies:</p>
+                    <a href="tel:+5491123456789">+54 9 11 2345-6789</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">🗺️</div>
+                    <h3>Visit Us</h3>
+                    <p>Our main office in El Calafate:</p>
+                    <address>
+                        123 Avenida Libertador<br>
+                        El Calafate, Santa Cruz<br>
+                        Argentina
+                    </address>
+                </div>
+            </div>
+        </section>
+        
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="accordion" id="faq-accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        What are the benefits of becoming a member?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Members gain access to detailed trail information, exclusive guides, GPS coordinates, seasonal updates, and community forums. Depending on your membership level, you may also receive custom itinerary planning, local expert support, and discounts with our partners in Patagonia.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        Can I upgrade or downgrade my membership?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes, you can change your membership level at any time through your account dashboard. Upgrades take effect immediately, while downgrades will be applied at the end of your current billing cycle.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        Do you offer group or family memberships?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes, we offer special rates for groups and families. Contact us directly at info@patagoniatrailexplorers.com for more information about our group packages.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        How do I cancel my membership?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>You can cancel your paid membership at any time through your account settings. Your access will continue until the end of your current billing period. Free members can deactivate their accounts at any time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Patagonia Trail Explorers</h3>
+                <p>Your comprehensive resource for hiking adventures in Argentina's Patagonia region.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="trails.html">Trails</a></li>
+                    <li><a href="tools.html">Planning Tools</a></li>
+                    <li><a href="siteplan.html">Site Plan</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <nav class="social-icons">
+                    <a href="https://facebook.com">
+                        <img src="images/facebook.webp" alt="facebook">
+                    </a>
+                    <a href="https://twitter.com">
+                        <img src="images/twitter.webp" alt="twitter">
+                    </a>
+                    <a href="https://instagram.com">
+                        <img src="images/instagram.webp" alt="instagram">
+                    </a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><span id="currentyear"></span> ♠ Franco Zarate ♠ Argentina</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.accordion-icon');
+                    
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    content.style.maxHeight = isExpanded ? null : content.scrollHeight + 'px';
+                    icon.textContent = isExpanded ? '+' : '-';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

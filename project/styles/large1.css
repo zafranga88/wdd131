@@ -1,0 +1,66 @@
+
+@media (min-width: 1024px) {
+    .container {
+        width: 80%;
+        max-width: 1200px;
+        padding: 20px;
+    }
+    
+    .section {
+        padding: 25px;
+        margin-bottom: 40px;
+    }
+
+    .color-box {
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+    }
+
+    .logo-text {
+        font-size: 24px;
+    }
+    
+    .logo-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .wireframe {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .desktop-wireframe {
+        width: 800px;
+        height: 500px;
+    }
+    
+    .desktop-nav {
+        width: 400px;
+    }
+
+    .desktop-main-left {
+        width: 65%;
+    }
+    
+    .desktop-main-right {
+        width: 35%;
+    }
+    
+    .desktop-hero {
+        height: 200px;
+    }
+    
+    .desktop-trail-cards {
+        justify-content: space-between;
+    }
+    
+    .desktop-trail-card {
+        height: 120px;
+        width: 32%;
+        margin-bottom: 0;
+    }
+}
