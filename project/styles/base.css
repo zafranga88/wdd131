@@ -945,22 +945,35 @@ blockquote, .featured-story {
 /*.................*/
 
 
-/* Base navigation styles */
-nav {
+/* Target only the header navigation */
+header nav,
+.header nav, 
+.site-header nav,
+#main-header nav,
+.main-header nav {
   position: relative;
   background-color: #2B6D4F; /* Forest green */
   padding: 0 15px;
   font-family: Arial, sans-serif;
 }
 
-#primary-nav {
+/* Only target the primary nav in the header */
+header #primary-nav,
+.header #primary-nav,
+.site-header #primary-nav,
+#main-header #primary-nav,
+.main-header #primary-nav {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
 }
 
-#primary-nav li a {
+header #primary-nav li a,
+.header #primary-nav li a,
+.site-header #primary-nav li a,
+#main-header #primary-nav li a,
+.main-header #primary-nav li a {
   color: white;
   text-decoration: none;
   font-weight: 600;
@@ -969,17 +982,29 @@ nav {
   transition: background-color 0.3s ease;
 }
 
-#primary-nav li a:hover {
+header #primary-nav li a:hover,
+.header #primary-nav li a:hover,
+.site-header #primary-nav li a:hover,
+#main-header #primary-nav li a:hover,
+.main-header #primary-nav li a:hover {
   background-color: #2c5a41; /* Darker green on hover */
 }
 
-#primary-nav li a.active {
+header #primary-nav li a.active,
+.header #primary-nav li a.active,
+.site-header #primary-nav li a.active,
+#main-header #primary-nav li a.active,
+.main-header #primary-nav li a.active {
   border-bottom: 3px solid #f8f8f8;
 }
 
-/* Mobile navigation styles */
+/* Mobile navigation styles - only for header */
 @media (max-width: 768px) {
-  #hamburger-btn {
+  header #hamburger-btn,
+  .header #hamburger-btn,
+  .site-header #hamburger-btn,
+  #main-header #hamburger-btn,
+  .main-header #hamburger-btn {
     display: block;
     font-size: 1.8rem;
     background: none;
@@ -990,67 +1015,111 @@ nav {
     transition: transform 0.3s ease;
   }
   
-  #hamburger-btn:hover {
+  header #hamburger-btn:hover,
+  .header #hamburger-btn:hover,
+  .site-header #hamburger-btn:hover,
+  #main-header #hamburger-btn:hover,
+  .main-header #hamburger-btn:hover {
     transform: scale(1.1);
   }
   
-  #primary-nav {
+  header #primary-nav,
+  .header #primary-nav,
+  .site-header #primary-nav,
+  #main-header #primary-nav,
+  .main-header #primary-nav {
     display: none; /* Hide by default on mobile */
     flex-direction: column;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background-color: #3b7a57; /* Same as the main nav background */
+    background-color: #3b7a57;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     z-index: 100;
     border-top: 1px solid rgba(255,255,255,0.1);
   }
   
-  #primary-nav li {
+  header #primary-nav li,
+  .header #primary-nav li,
+  .site-header #primary-nav li,
+  #main-header #primary-nav li,
+  .main-header #primary-nav li {
     width: 100%;
     border-bottom: 1px solid rgba(255,255,255,0.1);
   }
   
-  #primary-nav li:last-child {
+  header #primary-nav li:last-child,
+  .header #primary-nav li:last-child,
+  .site-header #primary-nav li:last-child,
+  #main-header #primary-nav li:last-child,
+  .main-header #primary-nav li:last-child {
     border-bottom: none;
   }
   
-  #primary-nav li a {
+  header #primary-nav li a,
+  .header #primary-nav li a,
+  .site-header #primary-nav li a,
+  #main-header #primary-nav li a,
+  .main-header #primary-nav li a {
     display: block;
     padding: 15px;
     text-align: center;
   }
   
-  /* Specifically ensuring mobile menu links have the same background */
-  #primary-nav.show li a {
-    background-color: #3b7a57;
-  }
-  
   /* This is the important class that shows the menu when activated */
-  #primary-nav.show {
+  header #primary-nav.show,
+  .header #primary-nav.show,
+  .site-header #primary-nav.show,
+  #main-header #primary-nav.show,
+  .main-header #primary-nav.show {
     display: flex;
   }
 }
 
 /* Desktop navigation styles */
 @media (min-width: 769px) {
-  nav {
+  header nav,
+  .header nav,
+  .site-header nav,
+  #main-header nav,
+  .main-header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  #hamburger-btn {
+  header #hamburger-btn,
+  .header #hamburger-btn,
+  .site-header #hamburger-btn,
+  #main-header #hamburger-btn,
+  .main-header #hamburger-btn {
     display: none; /* Hide hamburger on desktop */
   }
   
-  #primary-nav {
+  header #primary-nav,
+  .header #primary-nav,
+  .site-header #primary-nav,
+  #main-header #primary-nav,
+  .main-header #primary-nav {
     display: flex;
   }
   
-  #primary-nav li {
+  header #primary-nav li,
+  .header #primary-nav li,
+  .site-header #primary-nav li,
+  #main-header #primary-nav li,
+  .main-header #primary-nav li {
     margin-right: 5px;
   }
 }
 
+/* Specifically leave footer navigation untouched */
+footer nav,
+.footer nav,
+.site-footer nav,
+#main-footer nav,
+.main-footer nav {
+  /* Reset any styles that might be inherited */
+  background-color: transparent;
+}
