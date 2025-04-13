@@ -366,7 +366,6 @@ function saveChecklist() {
 }
 
 // Seasonal Tabs Functions
-// Seasonal Tabs Functions
 function setupSeasonalTabs() {
     const tabButtons = document.querySelectorAll('.tab-button');
     const seasonPanels = document.querySelectorAll('.season-panel');
