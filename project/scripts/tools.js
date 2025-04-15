@@ -1,6 +1,6 @@
-// DOM Elements
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Navigation Menu Toggle
+
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const primaryNav = document.getElementById('primary-nav');
     
@@ -10,20 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Footer information
     updateFooterInfo();
     
-    // Trail Duration Calculator
     setupDurationCalculator();
     
-    // Packing Checklist
     setupPackingChecklist();
     
-    // Seasonal Guide Tabs
     setupSeasonalTabs();
 });
 
-// Update footer information (year and last modified)
 function updateFooterInfo() {
     const currentYearEl = document.getElementById('currentyear');
     const lastModifiedEl = document.getElementById('lastModified');
@@ -38,29 +33,25 @@ function updateFooterInfo() {
     }
 }
 
-// Trail Duration Calculator Functions
 function setupDurationCalculator() {
     const calculateBtn = document.getElementById('calculate-duration');
     const resultDiv = document.getElementById('duration-result');
     
     if (calculateBtn && resultDiv) {
         calculateBtn.addEventListener('click', () => {
-            // Get input values
+
             const distance = parseFloat(document.getElementById('trail-distance').value);
             const elevationGain = parseFloat(document.getElementById('elevation-gain').value);
             const hikingPace = document.getElementById('hiking-pace').value;
             const breaksTime = parseInt(document.getElementById('breaks-time').value);
             
-            // Validate inputs
             if (isNaN(distance) || isNaN(elevationGain) || isNaN(breaksTime)) {
                 resultDiv.innerHTML = `<div class="error-message">Please enter valid numbers for all fields</div>`;
                 return;
             }
             
-            // Calculate duration
             const duration = calculateHikingDuration(distance, elevationGain, hikingPace, breaksTime);
             
-            // Display result
             resultDiv.innerHTML = `
                 <div class="result-content">
                     <h3>Estimated Hiking Duration</h3>
@@ -78,7 +69,7 @@ function setupDurationCalculator() {
 }
 
 function calculateHikingDuration(distance, elevationGain, pace, breaksTime) {
-    // Define hiking speeds in km/h based on selected pace
+
     let speed;
     switch (pace) {
         case 'slow':
@@ -97,13 +88,10 @@ function calculateHikingDuration(distance, elevationGain, pace, breaksTime) {
             speed = 3;
     }
     
-    // Calculate walking time in minutes (distance / speed * 60)
     const walkingMinutes = (distance / speed) * 60;
     
-    // Calculate additional time for elevation gain (common rule: add 1 minute per 10m elevation gain)
     const elevationMinutes = (elevationGain / 10);
     
-    // Total minutes including breaks
     const totalMinutes = walkingMinutes + elevationMinutes + breaksTime;
     
     return {
@@ -127,7 +115,6 @@ function formatDuration(minutes) {
     }
 }
 
-// Packing Checklist Functions
 function setupPackingChecklist() {
     const generateBtn = document.getElementById('generate-checklist');
     const saveBtn = document.getElementById('save-checklist');
@@ -138,13 +125,10 @@ function setupPackingChecklist() {
             const hikeType = document.getElementById('hike-type').value;
             const hikeSeason = document.getElementById('hike-season').value;
             
-            // Generate checklist based on selected options
             const checklist = generatePackingChecklist(hikeType, hikeSeason);
             
-            // Display checklist
             displayChecklist(checklist, checklistContainer);
             
-            // Enable save button
             if (saveBtn) {
                 saveBtn.disabled = false;
             }
@@ -159,7 +143,7 @@ function setupPackingChecklist() {
 }
 
 function generatePackingChecklist(hikeType, season) {
-    // Common items for all hikes
+
     const essentials = [
         { name: "Backpack", category: "Essential Gear" },
         { name: "Water bottle or hydration system", category: "Essential Gear" },
@@ -180,7 +164,6 @@ function generatePackingChecklist(hikeType, season) {
         { name: "Waterproof/windproof jacket", category: "Clothing" }
     ];
 
-    // Items for overnight or multi-day hikes
     const overnightItems = [
         { name: "Tent or shelter", category: "Camping Gear" },
         { name: "Sleeping bag", category: "Camping Gear" },
@@ -198,7 +181,6 @@ function generatePackingChecklist(hikeType, season) {
         { name: "Towel (quick-dry)", category: "Personal Care" }
     ];
 
-    // Additional items for multi-day treks
     const multiDayItems = [
         { name: "Extra batteries or power bank", category: "Tools" },
         { name: "More comprehensive first aid supplies", category: "Safety" },
@@ -210,7 +192,6 @@ function generatePackingChecklist(hikeType, season) {
         { name: "Emergency shelter (space blanket)", category: "Safety" }
     ];
 
-    // Seasonal items
     const seasonalItems = {
         'summer': [
             { name: "Extra sun protection", category: "Personal Care" },
@@ -239,10 +220,8 @@ function generatePackingChecklist(hikeType, season) {
         ]
     };
     
-    // Build the checklist based on hike type and season
     let checklist = [...essentials];
     
-    // Add items based on hike type
     if (hikeType === 'overnight' || hikeType === 'multi-day') {
         checklist = [...checklist, ...overnightItems];
     }
@@ -251,19 +230,17 @@ function generatePackingChecklist(hikeType, season) {
         checklist = [...checklist, ...multiDayItems];
     }
     
-    // Add seasonal items
     if (seasonalItems[season]) {
         checklist = [...checklist, ...seasonalItems[season]];
     }
     
-    // Sort by category
     checklist.sort((a, b) => a.category.localeCompare(b.category));
     
     return checklist;
 }
 
 function displayChecklist(checklist, container) {
-    // Group items by category
+
     const categorizedItems = {};
     
     checklist.forEach(item => {
@@ -273,10 +250,8 @@ function displayChecklist(checklist, container) {
         categorizedItems[item.category].push(item);
     });
     
-    // Build the HTML
     let html = `<div class="checklist">`;
     
-    // Add each category and its items
     Object.keys(categorizedItems).sort().forEach(category => {
         html += `
             <div class="checklist-category">
@@ -303,10 +278,8 @@ function displayChecklist(checklist, container) {
     
     html += `</div>`;
     
-    // Update the container
     container.innerHTML = html;
     
-    // Add event listeners to checkboxes for progress tracking
     addCheckboxListeners();
 }
 
@@ -317,7 +290,6 @@ function addCheckboxListeners() {
         checkbox.addEventListener('change', updateProgress);
     });
     
-    // Initial progress update
     updateProgress();
 }
 
@@ -326,10 +298,8 @@ function updateProgress() {
     const totalItems = checkboxes.length;
     const checkedItems = document.querySelectorAll('input[type="checkbox"][name="item"]:checked').length;
     
-    // Find the checklist container
     const checklistContainer = document.getElementById('checklist-container');
     
-    // Find or create progress bar
     let progressSection = document.querySelector('.checklist-progress');
     
     if (!progressSection && checklistContainer) {
@@ -352,20 +322,16 @@ function updateProgress() {
 }
 
 function saveChecklist() {
-    // Get all checked items
+
     const checkedItems = Array.from(document.querySelectorAll('input[type="checkbox"][name="item"]:checked'))
         .map(input => input.value);
     
-    // In a real application, you might save this to localStorage or send to a server
-    // For this demo, we'll show a confirmation message
+
     
     alert(`Your checklist with ${checkedItems.length} checked items has been saved! In a complete application, this would be stored to your account.`);
     
-    // For localStorage example (commented out):
-    // localStorage.setItem('savedChecklist', JSON.stringify(checkedItems));
 }
 
-// Seasonal Tabs Functions
 function setupSeasonalTabs() {
     const tabButtons = document.querySelectorAll('.tab-button');
     const seasonPanels = document.querySelectorAll('.season-panel');
@@ -381,11 +347,10 @@ function setupSeasonalTabs() {
     };
 
     const activatePanel = (season) => {
-        // Remove active classes
+
         tabButtons.forEach(btn => btn.classList.remove('active'));
         seasonPanels.forEach(panel => panel.classList.remove('active'));
 
-        // Add active classes
         const activeButton = document.querySelector(`[data-season="${season}"]`);
         const activePanel = document.getElementById(`${season}-content`);
         
@@ -396,7 +361,6 @@ function setupSeasonalTabs() {
         }
     };
 
-    // Click handlers for tab buttons
     tabButtons.forEach(button => {
         button.addEventListener('click', () => {
             const season = button.dataset.season;
@@ -404,10 +368,8 @@ function setupSeasonalTabs() {
         });
     });
 
-    // Initialize first panel
     activatePanel('summer');
 
-    // Intersection Observer for lazy loading
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -421,7 +383,6 @@ function setupSeasonalTabs() {
         });
     });
 
-    // Observe all images
     document.querySelectorAll('.season-panel img.lazy-load').forEach(img => {
         observer.observe(img);
     });

@@ -1,6 +1,5 @@
 // Main JavaScript for Patagonia Trail Explorers
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const primaryNav = document.getElementById('primary-nav');
     
@@ -11,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Update footer year and last modified date
     const currentYearSpan = document.getElementById('currentyear');
     const lastModifiedP = document.getElementById('lastModified');
     
@@ -29,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
         })}`;
     }
     
-    // Lazy load images
     const lazyImages = document.querySelectorAll('.lazy-load');
     
     if ('IntersectionObserver' in window) {
@@ -47,23 +44,18 @@ document.addEventListener('DOMContentLoaded', function() {
             imageObserver.observe(img);
         });
     } else {
-        // Fallback for browsers without IntersectionObserver
         lazyImages.forEach(img => {
             img.classList.remove('lazy-load');
         });
     }
     
-    // Home page specific functionality
     if (window.location.pathname.includes('index.html') || document.querySelector('.hero')) {
         setupWeatherWidget();
         setupNewsletterForm();
         
-        // Add any featured trail functionality here if needed
-        // For example, you could add event listeners for trail card interactions
         setupTrailCardInteractions();
     }
     
-    // Setup FAQ accordion if exists
     const accordionHeaders = document.querySelectorAll('.accordion-header');
     
     accordionHeaders.forEach(header => {
@@ -79,12 +71,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Optional: Trail card interactions function
 function setupTrailCardInteractions() {
     const trailCards = document.querySelectorAll('.trail-card');
     
     trailCards.forEach(card => {
-        // Example: Add hover effects or click interactions
+
         card.addEventListener('mouseenter', function() {
             this.classList.add('hover');
         });
@@ -92,20 +83,16 @@ function setupTrailCardInteractions() {
         card.addEventListener('mouseleave', function() {
             this.classList.remove('hover');
         });
-        
-        // You could also add click events for mobile devices
-        // or other interactive features
+
     });
 }
 
-// Weather Widget
 function setupWeatherWidget() {
     const weatherWidget = document.getElementById('weather-widget');
     if (!weatherWidget) return;
     
-    // Simulate loading weather data (would be replaced with actual API call)
     setTimeout(() => {
-        // Sample weather data for different Patagonia locations
+
         const weatherData = [
             {
                 location: 'El Chaltén',
@@ -151,7 +138,6 @@ function setupWeatherWidget() {
     }, 1000);
 }
 
-// Newsletter form
 function setupNewsletterForm() {
     const newsletterForm = document.getElementById('newsletter-form');
     if (!newsletterForm) return;
@@ -162,13 +148,11 @@ function setupNewsletterForm() {
         const email = document.getElementById('email').value;
         const experienceLevel = document.getElementById('hiking-experience').value;
         
-        // Validation
         if (!email) {
             alert('Please enter your email address.');
             return;
         }
         
-        // Simulate form submission
         const formData = {
             email: email,
             experienceLevel: experienceLevel
@@ -176,7 +160,6 @@ function setupNewsletterForm() {
         
         console.log('Newsletter subscription:', formData);
         
-        // Success message
         newsletterForm.innerHTML = `
             <div class="success-message">
                 <h3>Thank you for subscribing!</h3>

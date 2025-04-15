@@ -1,32 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Existing code...
-    
-    // Add this new function to handle trail detail views
+
     function handleTrailDetailView() {
-        // Get URL parameters
+
         const urlParams = new URLSearchParams(window.location.search);
         const trailId = urlParams.get('trail');
         
-        // Elements to show/hide based on view
         const trailsGallery = document.querySelector('.trails-gallery');
         const trailFilters = document.querySelector('.trail-filters');
         const userReviews = document.querySelector('.user-reviews');
         const trailDetailSection = document.getElementById('trail-detail-view');
         
-        // If we have a trail ID in the URL
         if (trailId) {
-            // Hide the gallery and filters
+
             if (trailsGallery) trailsGallery.style.display = 'none';
             if (trailFilters) trailFilters.style.display = 'none';
             
-            // Show the detail view
             if (trailDetailSection) {
                 trailDetailSection.style.display = 'block';
                 
-                // Find the matching trail data
                 const trailData = getTrailData(trailId);
                 
-                // Display the trail details
                 if (trailData) {
                     document.getElementById('detail-trail-name').textContent = trailData.name;
                     document.getElementById('detail-trail-location').textContent = trailData.location;
@@ -37,10 +30,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.getElementById('detail-trail-image').src = trailData.image;
                     document.getElementById('detail-trail-image').alt = trailData.name;
                     
-                    // Load trail-specific reviews
                     loadTrailReviews(trailId);
                 } else {
-                    // If trail not found, show error message
+
                     trailDetailSection.innerHTML = `
                         <div class="error-message">
                             <h2>Trail Not Found</h2>
@@ -50,14 +42,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     `;
                 }
             }
-            
-            // Show only reviews for this trail
+
             if (userReviews) {
                 userReviews.style.display = 'block';
                 document.getElementById('trail-select').value = trailId;
             }
         } else {
-            // We're on the main trails page, show the gallery and filters
+
             if (trailsGallery) trailsGallery.style.display = 'block';
             if (trailFilters) trailFilters.style.display = 'block';
             if (trailDetailSection) trailDetailSection.style.display = 'none';
@@ -65,9 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Function to get trail data based on ID
     function getTrailData(id) {
-        // Trail data mapping (you can expand this with more details)
+
         const trails = {
             "1": {
                 name: "Laguna de los Tres",
@@ -154,12 +144,10 @@ document.addEventListener('DOMContentLoaded', function() {
         return trails[id];
     }
     
-    // Function to load reviews specific to a trail
     function loadTrailReviews(trailId) {
-        // Get all reviews
+
         const reviews = document.querySelectorAll('.review-item');
         
-        // Show only reviews for the selected trail
         reviews.forEach(review => {
             const reviewTrailName = review.querySelector('.review-trail-name').textContent;
             const matchingTrail = getTrailData(trailId);
@@ -172,7 +160,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Add a back button functionality
     document.addEventListener('click', function(event) {
         if (event.target.classList.contains('back-to-trails')) {
             event.preventDefault();
@@ -180,8 +167,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Call the function to handle detail view when page loads
     handleTrailDetailView();
     
-    // Existing code for filters and other functionality...
 });

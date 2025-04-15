@@ -1,15 +1,13 @@
 /* Base CSS - Mobile First Approach */
 
-/* -------------------- GLOBAL STYLES -------------------- */
-
 :root {
-  --primary-color: #2B6D4F;       /* Forest Green */
-  --secondary-color: #90AFC5;     /* Soft Blue */
-  --accent-color: #F9A66C;        /* Orange */
-  --dark-bg: #333333;             /* Dark Gray */
-  --light-bg: #F5F5F5;            /* Light Gray */
+  --primary-color: #2B6D4F;       
+  --secondary-color: #90AFC5;     
+  --accent-color: #F9A66C;        
+  --dark-bg: #333333;            
+  --light-bg: #F5F5F5;            
   --white: #ffffff;
-  --black: #333333;               /* Text Color - Dark Gray */
+  --black: #333333;               
   --gray: #767676;
   --light-gray: #e0e0e0;
   --border-radius: 4px;
@@ -136,7 +134,6 @@ input:focus, select:focus, textarea:focus {
   border: 0;
 }
 
-/* -------------------- HEADER -------------------- */
 header {
   background-color: var(--primary-color);
   color: var(--white);
@@ -209,8 +206,6 @@ nav {
   margin-top: 0.5rem;
 }
 
-
-/* -------------------- HERO SECTION -------------------- */
 .hero {
   position: relative;
   width: 100vw;
@@ -234,7 +229,7 @@ nav {
   transform: translateX(-50%);
   width: 100%;
   height: 100%;
-  max-width: 1200px; /* Matches your container max-width */
+  max-width: 1200px; 
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
@@ -245,7 +240,6 @@ nav {
   padding: 1rem;
 }
 
-/* -------------------- FEATURED TRAILS -------------------- */
 .featured-trails {
   background-color: var(--white);
   text-align: center;
@@ -330,7 +324,6 @@ nav {
   color: var(--primary-color);
 }
 
-/* -------------------- ABOUT PATAGONIA -------------------- */
 .about-patagonia {
   text-align: center;
 }
@@ -350,7 +343,6 @@ nav {
   margin: 0 auto;
 }
 
-/* -------------------- WEATHER SECTION -------------------- */
 .weather-section {
   background-color: var(--light-bg);
   text-align: center;
@@ -380,7 +372,6 @@ nav {
   padding: 0 1rem;
 }
 
-/* Responsive adjustments */
 @media (min-width: 768px) {
   .weather-section {
     padding: 3rem 2rem;
@@ -401,7 +392,6 @@ nav {
   }
 }
 
-/* -------------------- NEWSLETTER -------------------- */
 .newsletter {
   text-align: center;
   background-color: var(--secondary-color);
@@ -418,7 +408,6 @@ nav {
   margin: 1.5rem auto 0;
 }
 
-/* -------------------- PAGE HEADER -------------------- */
 .page-header {
   background-color: var(--primary-color);
   color: var(--white);
@@ -430,7 +419,6 @@ nav {
   color: var(--white);
 }
 
-/* -------------------- TRAIL FILTERS -------------------- */
 .trail-filters {
   background-color: var(--light-bg);
 }
@@ -473,7 +461,6 @@ nav {
   font-style: italic;
 }
 
-/* -------------------- TRAIL DETAIL MODAL -------------------- */
 .trail-detail-modal {
   display: none;
   position: fixed;
@@ -510,7 +497,6 @@ nav {
   cursor: pointer;
 }
 
-/* -------------------- USER REVIEWS -------------------- */
 .user-reviews {
   background-color: var(--light-bg);
 }
@@ -576,7 +562,6 @@ nav {
   padding: 1rem;
 }
 
-/* -------------------- TOOLS SECTION -------------------- */
 .tool-section {
   background-color: var(--white);
   margin-bottom: 2rem;
@@ -633,7 +618,6 @@ nav {
   background-color: var(--primary-color);
 }
 
-/* -------------------- SEASONAL TABS -------------------- */
 .seasonal-tabs {
   display: flex;
   flex-wrap: wrap;
@@ -678,13 +662,11 @@ nav {
   width: 100%;
 }
 
-/* -------------------- CONTACT SECTION -------------------- */
 .contact-section {
   text-align: center;
   background-color: var(--light-bg);
 }
 
-/* -------------------- FOOTER -------------------- */
 footer {
   background-color: var(--dark-bg);
   color: var(--white);
@@ -738,7 +720,6 @@ footer {
   font-size: 0.9rem;
 }
 
-/* -------------------- UTILITIES -------------------- */
 .lazy-load {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -748,7 +729,6 @@ footer {
   opacity: 1;
 }
 
-/* -------------------- FOCUS STYLES -------------------- */
 a:focus,
 button:focus,
 input:focus,
@@ -758,7 +738,6 @@ textarea:focus {
   outline-offset: 2px;
 }
 
-/* Quotes and featured stories styling with Lora font */
 blockquote, .featured-story {
   font-family: 'Lora', serif;
   border-left: 4px solid var(--secondary-color);
@@ -767,7 +746,6 @@ blockquote, .featured-story {
   font-style: italic;
 }
 
-/* Trail Detail View */
 .trail-detail-view {
   padding: 2rem;
   background-color: #f8f9fa;
@@ -875,7 +853,6 @@ blockquote, .featured-story {
   padding: 3rem;
 }
 
-/* Media query for larger screens */
 @media (min-width: 768px) {
   .detail-content {
       flex-direction: row;
@@ -886,10 +863,6 @@ blockquote, .featured-story {
   }
 }
 
-/*..............*/
-
-
-/* Seasonal Guide Images */
 .season-panel {
   display: none;
 }
@@ -942,22 +915,17 @@ blockquote, .featured-story {
   }
 }
 
-/*.................*/
-
-
-/* Target only the header navigation */
 header nav,
 .header nav, 
 .site-header nav,
 #main-header nav,
 .main-header nav {
   position: relative;
-  background-color: #2B6D4F; /* Forest green */
+  background-color: #2B6D4F; 
   padding: 0 15px;
   font-family: Arial, sans-serif;
 }
 
-/* Only target the primary nav in the header */
 header #primary-nav,
 .header #primary-nav,
 .site-header #primary-nav,
@@ -987,7 +955,7 @@ header #primary-nav li a:hover,
 .site-header #primary-nav li a:hover,
 #main-header #primary-nav li a:hover,
 .main-header #primary-nav li a:hover {
-  background-color: #2c5a41; /* Darker green on hover */
+  background-color: #2c5a41; 
 }
 
 header #primary-nav li a.active,
@@ -998,7 +966,6 @@ header #primary-nav li a.active,
   border-bottom: 3px solid #f8f8f8;
 }
 
-/* Mobile navigation styles - only for header */
 @media (max-width: 768px) {
   header #hamburger-btn,
   .header #hamburger-btn,
@@ -1028,7 +995,7 @@ header #primary-nav li a.active,
   .site-header #primary-nav,
   #main-header #primary-nav,
   .main-header #primary-nav {
-    display: none; /* Hide by default on mobile */
+    display: none; 
     flex-direction: column;
     position: absolute;
     top: 100%;
@@ -1067,7 +1034,6 @@ header #primary-nav li a.active,
     text-align: center;
   }
   
-  /* This is the important class that shows the menu when activated */
   header #primary-nav.show,
   .header #primary-nav.show,
   .site-header #primary-nav.show,
@@ -1077,7 +1043,6 @@ header #primary-nav li a.active,
   }
 }
 
-/* Desktop navigation styles */
 @media (min-width: 769px) {
   header nav,
   .header nav,
@@ -1094,7 +1059,7 @@ header #primary-nav li a.active,
   .site-header #hamburger-btn,
   #main-header #hamburger-btn,
   .main-header #hamburger-btn {
-    display: none; /* Hide hamburger on desktop */
+    display: none; 
   }
   
   header #primary-nav,
@@ -1114,12 +1079,11 @@ header #primary-nav li a.active,
   }
 }
 
-/* Specifically leave footer navigation untouched */
 footer nav,
 .footer nav,
 .site-footer nav,
 #main-footer nav,
 .main-footer nav {
-  /* Reset any styles that might be inherited */
+
   background-color: transparent;
 }

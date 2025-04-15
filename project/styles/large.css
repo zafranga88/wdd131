@@ -1,6 +1,6 @@
-/* Large CSS - For large desktops (1024px+) */
+/* Large CSS - For large desktops */
 @media (min-width: 1024px) {
-  /* Header */
+
   header {
     padding: 1rem 3rem;
     flex-direction: row;
@@ -39,13 +39,11 @@
     background-color: var(--accent-color);
   }
   
-  /* Container */
   .container {
     max-width: 1200px;
     margin: 0 auto;
   }
   
-  /* Hero Section */
   .hero {
     position: relative;
     width: 100vw;
@@ -78,7 +76,6 @@
     padding: 0 2rem;
 }
   
-  /* Section Spacing */
   section {
     padding: 3rem;
   }
@@ -90,12 +87,10 @@
     padding: 4rem 3rem;
   }
   
-  /* Trail Cards */
   .trail-cards {
     grid-template-columns: repeat(3, 1fr);
   }
   
-  /* Main Layout - Based on Wireframe */
   main {
     display: flex;
     flex-wrap: wrap;
@@ -111,7 +106,6 @@
     flex: 1;
   }
   
-  /* About Section */
   .content-columns {
     flex-direction: row;
   }
@@ -126,7 +120,6 @@
     flex: 1;
   }
   
-  /* Trails Page Styles */
   .filter-controls {
     flex-direction: row;
     flex-wrap: wrap;
@@ -147,7 +140,6 @@
     margin: 5% auto;
   }
   
-  /* User Reviews Section */
   .user-reviews-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -160,7 +152,6 @@
     height: 100%;
   }
   
-  /* Tools Page Styles */
   .tool-section {
     max-width: 1200px;
     margin-left: auto;
@@ -211,7 +202,6 @@
     text-align: left;
   }
   
-  /* Contact Section */
   .contact-form-container {
     max-width: 800px;
     margin: 0 auto;
@@ -223,7 +213,6 @@
     gap: 1rem;
   }
   
-  /* Footer Styles */
   .footer-content {
     flex-direction: row;
     max-width: 1200px;
@@ -234,7 +223,6 @@
     flex: 1;
   }
   
-  /* Enhanced animations and transitions */
   .trail-card {
     transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
                 box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -257,7 +245,6 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
   
-  /* Desktop wireframe styles */
   .desktop-wireframe {
     width: 100%;
     max-width: 900px;
@@ -278,7 +265,6 @@
     margin-bottom: 20px;
   }
   
-  /* Site Plan Enhanced Styles */
   .color-sample {
     display: flex;
     align-items: center;
@@ -361,7 +347,6 @@
     font-family: 'Lora', serif;
   }
   
-  /* Enhanced Seasonal Panel */
   .season-info h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
@@ -404,7 +389,6 @@
     font-weight: bold;
   }
   
-  /* Enhanced Trail Details */
   .trail-detail-modal .modal-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -466,7 +450,6 @@
     margin-bottom: 2rem;
   }
   
-  /* Newsletter Enhanced */
   .newsletter-container {
     display: flex;
     align-items: center;
@@ -507,7 +490,6 @@
   }
 }
 
-/* Trail Detail View */
 .trail-detail-view {
   padding: 2rem;
   background-color: #f8f9fa;
@@ -616,7 +598,6 @@
   padding: 3rem;
 }
 
-/* Media query for larger screens */
 @media (min-width: 768px) {
   .detail-content {
       flex-direction: row;
@@ -627,10 +608,6 @@
   }
 }
 
-/*......................*/
-
-
-/* Seasonal Guide Images */
 .season-panel {
   display: none;
 }
@@ -715,7 +692,6 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* medium.css */
 @media (min-width: 768px) {
   .page-header {
       padding: 3rem 2rem;
@@ -726,7 +702,6 @@
   }
 }
 
-/* large.css */
 @media (min-width: 1024px) {
   .page-header {
       padding: 4rem 2rem;

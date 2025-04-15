@@ -1,6 +1,6 @@
-/* Medium CSS - For tablets and smaller desktops (768px+) */
+/* Medium CSS - For tablets and smaller desktops */
 @media (min-width: 768px) {
-  /* Global Styles */
+
   h1 {
     font-size: 2.5rem;
   }
@@ -13,13 +13,11 @@
     padding: 3rem 2rem;
   }
   
-  /* Container */
   .container {
     max-width: 90%;
     margin: 0 auto;
   }
   
-  /* Header */
   header {
     flex-direction: row;
     justify-content: space-between;
@@ -54,7 +52,6 @@
     margin-top: 0;
   }
   
-  /* Hero Section */
   .hero {
     height: 70vh;
     min-height: 400px;
@@ -70,7 +67,6 @@
     margin-bottom: 2.5rem;
   }
   
-  /* Featured Trails */
   .trail-cards {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
@@ -80,7 +76,6 @@
     height: 220px;
   }
   
-  /* About Patagonia */
   .content-columns {
     flex-direction: row;
     gap: 2rem;
@@ -95,14 +90,12 @@
     flex: 2;
   }
   
-  /* Weather Section */
   .weather-widget {
     padding: 2rem;
     margin: 2rem auto;
     max-width: 700px;
   }
   
-  /* Newsletter Form */
   #newsletter-form {
     display: flex;
     flex-wrap: wrap;
@@ -121,12 +114,10 @@
     margin-top: 0;
   }
   
-  /* Page Header */
   .page-header {
     padding: 3rem 2rem;
   }
   
-  /* Trails Page Styles */
   .filter-controls {
     flex-direction: row;
     flex-wrap: wrap;
@@ -150,14 +141,12 @@
     gap: 2rem;
   }
   
-  /* Trail Detail Modal */
   .modal-content {
     width: 80%;
     margin: 5% auto;
     padding: 2.5rem;
   }
   
-  /* User Reviews */
   .review-form-container,
   .reviews-display {
     padding: 2rem;
@@ -167,7 +156,6 @@
     gap: 1rem;
   }
   
-  /* Tools Section */
   .tool-container {
     padding: 2rem;
   }
@@ -198,7 +186,6 @@
     min-width: 200px;
   }
   
-  /* Seasonal Tabs */
   .seasonal-tabs {
     justify-content: center;
     padding: 0 2rem;
@@ -224,7 +211,6 @@
     margin-bottom: 1.5rem;
   }
   
-  /* Footer Styles */
   footer {
     padding: 3rem 2rem 1.5rem;
   }
@@ -245,7 +231,6 @@
     margin-top: 1rem;
   }
   
-  /* Site Plan Specific Styles */
   .section {
     margin-bottom: 3rem;
   }
@@ -270,13 +255,12 @@
     align-items: center;
   }
   
-  /* Mobile wireframe in medium size */
   .mobile-wireframe {
     max-width: 350px;
     margin: 0 auto;
   }
 }
-/* Trail Detail View */
+
 .trail-detail-view {
   padding: 2rem;
   background-color: #f8f9fa;
@@ -384,7 +368,6 @@
   padding: 3rem;
 }
 
-/* Media query for larger screens */
 @media (min-width: 768px) {
   .detail-content {
       flex-direction: row;
@@ -395,10 +378,7 @@
   }
 }
 
-/*................*/
 
-
-/* Seasonal Guide Images */
 .season-panel {
   display: none;
 }
